@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 #COPY package*.json ./
 
 # Instala las dependencias del backend
-RUN npm install
+#RUN npm install
 
 # Verificar que Express esté instalado correctamente
 #RUN npm list express
