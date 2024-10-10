@@ -1,13 +1,39 @@
-services: 
-  user-service: 
-   build: ./userService
-   volumes: 
-    - .:/opt
-   ports:
-    - "3000:3000"
-  mail-service: 
-   build: ./mailService
-   volumes: 
-    - .:/opt
-   ports:
-    - "8080:3000"
+
+services:
+ microservicioEntrada:
+  build: ./microservicioEntrada
+  container_name: microservicioEntrada
+  networks: 
+  - app-network
+  ports:
+  - "3000:3000"
+ microservicio_1:
+  build: ./microservicio_1
+  container_name: microservicio_1
+  networks:
+  - app-network
+  depends_on: 
+  - microservicioEntrada
+  ports:
+  - "3001:3000"
+ microservicio_2:
+  build: ./microservicio_2
+  container_name: microservicio_2
+  networks:
+  - app-network
+  depends_on: 
+  - microservicioEntrada
+  ports:
+  - "3002:3000"
+ microservicio_3:
+  build: ./microservicio_3
+  container_name: microservicio_3
+  networks:
+  - app-network
+  depends_on: 
+  - microservicioEntrada
+  ports:
+  - "3003:3000"
+networks:
+ app-network:
+  driver: bridge
