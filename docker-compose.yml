@@ -3,6 +3,8 @@ services:
  microservicio-entrada:
   build: ./microservicioEntrada
   container_name: microservicio-entrada
+  volumes: 
+  - .:/opt
   networks: 
   - app-network
   ports:
@@ -10,6 +12,8 @@ services:
  microservicio-1:
   build: ./microservicio_1
   container_name: microservicio_1
+  volumes: 
+    - .:/opt
   networks:
   - app-network
   depends_on: 
@@ -19,6 +23,8 @@ services:
  microservicio-2:
   build: ./microservicio_2
   container_name: microservicio_2
+  volumes: 
+  - .:/opt  
   networks:
   - app-network
   depends_on: 
@@ -28,6 +34,8 @@ services:
  microservicio-3:
   build: ./microservicio_3
   container_name: microservicio_3
+  volumes: 
+  - .:/opt
   networks:
   - app-network
   depends_on: 
@@ -37,3 +45,5 @@ services:
 networks:
  app-network:
   driver: bridge
+ volumes:
+        

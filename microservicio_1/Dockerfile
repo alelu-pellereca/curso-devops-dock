@@ -5,16 +5,16 @@ FROM node:18
 WORKDIR /usr/src/app
 
 # Copia los archivos del proyecto al contenedor
-COPY package*.json ./
+#COPY package*.json ./
 
 # Instala las dependencias del backend
 RUN npm install
 
 # Verificar que Express esté instalado correctamente
-RUN npm list express
+#RUN npm list express
 
 # Copia el resto de los archivos del proyecto
-COPY . .
+#COPY . .
 
 
 # Comando para ejecutar la API
