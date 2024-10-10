@@ -12,8 +12,7 @@ services:
   container_name: microservicio_1
   networks:
   - app-network
-  depends_on: 
-  - microservicio-entrada
+
   ports:
   - "3001:3000"
  microservicio-2:
@@ -21,8 +20,7 @@ services:
   container_name: microservicio_2
   networks:
   - app-network
-  depends_on: 
-  - microservicio-entrada
+
   ports:
   - "3002:3000"
  microservicio-3:
@@ -30,8 +28,7 @@ services:
   container_name: microservicio_3
   networks:
   - app-network
-  depends_on: 
-  - microservicio-entrada
+
   ports:
   - "3003:3000"
 networks:
