@@ -1,6 +1,6 @@
 
 services:
- microservicioEntrada:
+ microservicio-entrada:
   build: ./microservicioEntrada
   container_name: microservicioEntrada
   networks: 
