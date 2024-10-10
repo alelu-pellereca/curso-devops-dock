@@ -22,7 +22,7 @@ app.get('/microservicio_3', async (req, res) => {
     res.status(200).json({ message: responseAux.message });
 });
 app.get('/', (req, res) => {
-    res.status(200).json({ message: 'Hello World from microservicioEntrada!' });
+    res.status(200).json({ message: 'Hello World from microservicioEntrada 1!' });
 });
 
 // Ruta de ejemplo para pruebas
