@@ -2,7 +2,7 @@
 services:
  microservicio-entrada:
   build: ./microservicioEntrada
-  container_name: microservicioEntrada
+  container_name: microservicio-entrada
   networks: 
   - app-network
   ports:
@@ -13,7 +13,7 @@ services:
   networks:
   - app-network
   depends_on: 
-  - microservicioEntrada
+  - microservicio-entrada
   ports:
   - "3001:3000"
  microservicio-2:
@@ -22,7 +22,7 @@ services:
   networks:
   - app-network
   depends_on: 
-  - microservicioEntrada
+  - microservicio-entrada
   ports:
   - "3002:3000"
  microservicio-3:
@@ -31,7 +31,7 @@ services:
   networks:
   - app-network
   depends_on: 
-  - microservicioEntrada
+  - microservicio-entrada
   ports:
   - "3003:3000"
 networks:
